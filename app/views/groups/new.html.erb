@@ -1,9 +1,11 @@
-<h1>New group</h1>
+<nav class="navbar bg-primary">
+  <div class="d-flex align-items-baseline w-100">
+    <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/109/109618.png", width: 30), :back %>
+    <div class="w-100 text-center"><h6 class="text-white">New Category</h6>
+    </div>
+  </div>
+</nav>
+
 
 <%= render "form", group: @group %>
 
-<br>
-
-<div>
-  <%= link_to "Back to groups", groups_path %>
-</div>
