@@ -3,7 +3,9 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <nav class="navbar bg-primary">
     <div class="container-fluid d-flex align-items-baseline">
-      <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/109/109618.png", width: 30), :back %>
+    <%= link_to :back do %>
+      <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
+    <% end %>
       <h6 class="text-white">LOG IN</h6>
       <%= f.submit "Log in", class: "btn-primary border border-0" %>
     </div>
