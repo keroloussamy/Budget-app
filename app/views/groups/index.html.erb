@@ -1,0 +1,22 @@
+<nav class="navbar bg-primary">
+    <div class="d-flex align-items-baseline w-100">
+      <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/109/109618.png", width: 30), :back %>
+      <div class="w-100 text-center"><h6 class="text-white">Categories</h6>
+    </div>
+    </div>
+  </nav>
+<div id="groups">
+  <% @groups.each do |group| %>
+    <%= link_to group, class: "text-reset text-decoration-none" do %>
+    <div class="border border-1 d-flex m-2">
+      <img src="<%= group.icon %>" width="80px"/>
+      <h3 class="m-2"><%= group.name %></h3>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="fixed-bottom">
+  <%= link_to "Add New Category", new_group_path, class: "w-100 btn btn-lg btn-success" %>
+</div>
+

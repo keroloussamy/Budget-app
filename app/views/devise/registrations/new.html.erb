@@ -1,0 +1,29 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
+  <nav class="navbar bg-primary">
+    <div class="container-fluid d-flex align-items-baseline">
+      <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/109/109618.png", width: 30), :back %>
+      <h6 class="text-white">REGISTER</h6>
+      <%= f.submit "NEXT", class: "btn-primary border border-0" %>
+    </div>
+  </nav>  
+
+
+ <div class="field">
+    <%= f.text_field :name, autocomplete: "name", class: "form-control w-100", placeholder: "Full Name" %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-100", placeholder: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control w-100", placeholder: "Password" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control w-100", placeholder: "Repeat Password" %>
+  </div>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+<% end %>
+

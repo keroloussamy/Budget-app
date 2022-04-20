@@ -1,0 +1,26 @@
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <nav class="navbar bg-primary">
+    <div class="container-fluid d-flex align-items-baseline">
+      <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/109/109618.png", width: 30), :back %>
+      <h6 class="text-white">LOG IN</h6>
+      <%= f.submit "Log in", class: "btn-primary border border-0" %>
+    </div>
+  </nav>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-100", placeholder: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control w-100", placeholder: "Password" %>
+  </div>
+
+  <div class="text-center">
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-secondary"%>
+    <% end %>
+  </div>
+
+  
+<% end %>

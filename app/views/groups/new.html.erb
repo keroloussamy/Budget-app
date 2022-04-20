@@ -1,0 +1,12 @@
+<nav class="navbar bg-primary">
+  <div class="d-flex align-items-baseline w-100">
+    <%= link_to image_tag("https://cdn-icons-png.flaticon.com/512/109/109618.png", width: 30), :back %>
+    <div class="w-100 text-center"><h6 class="text-white">New Category</h6>
+    </div>
+  </div>
+</nav>
+
+
+<%= render "form", group: @group %>
+
+<%= form.select :category_ids, @user_categories.collect {|cat| [cat.name, cat.id]}, { include_blank: false }, required: true, class:"py-2 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", multiple: true %>
