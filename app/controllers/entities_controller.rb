@@ -21,10 +21,18 @@ class EntitiesController < ApplicationController
 
   # POST /entities or /entities.json
   def create
-    @entity = Entity.new(entity_params)
+    params = payment_params
+    @entity = Entity.new(name: params[:name], amount: params[:amount])
+    @entity.user_id = current_user.id
 
     respond_to do |format|
       if @entity.save
+        @groups_ids = params[:groups]
+        @groups_ids.each do |element|
+          next if element == ''
+          entity.groups.push(Group.find(element))
+          entity.save
+        
         format.html { redirect_to entity_url(@entity), notice: "Entity was successfully created." }
         format.json { render :show, status: :created, location: @entity }
       else
@@ -65,6 +73,6 @@ class EntitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entity_params
-      params.require(:entity).permit(:name, :amount)
+      params.require(:entity).permit(:name, :amount, groups: [])
     end
 end
