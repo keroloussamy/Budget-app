@@ -22,13 +22,13 @@ class EntitiesController < ApplicationController
 
   # POST /entities or /entities.json
   def create
-    params = payment_params
+    params = entity_params
     @entity = Entity.new(name: params[:name], amount: params[:amount])
     @entity.user_id = current_user.id
     @groups_ids = params[:group_ids]
     @groups_ids.each do |element|
       next if element == ''
-      entity.groups.push(Group.find(element))
+      @entity.groups.push(Group.find(element))
     end
 
     respond_to do |format|
