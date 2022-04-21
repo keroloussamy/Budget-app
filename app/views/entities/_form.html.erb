@@ -1,11 +1,25 @@
 <%= form_with(model: entity) do |form| %>
-  <div>
+<nav class="navbar bg-primary">
+  <div class="d-flex w-100">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
+  <% end %>
+    <div class="w-100 text-center"><h6 class="text-white">New Entity</h6>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="mt-3">
     <%= form.text_field :name, class: "form-control w-100", placeholder: "Name" %>
   </div>
 
-  <div>
+  <div class="mt-3">
     <%= form.number_field :amount, class: "form-control w-100", placeholder: "Amount" %>
   </div>
+
+  <label class="mt-3">Categories</label>
+  <%= form.select :group_ids, @groups.collect {|g| [g.name, g.id]}, { include_blank: false }, required: true, class:"form-select", multiple: true %>
 
   <div class="text-center m-3">
     <%= form.submit "Save", class: "btn btn-primary" %>
@@ -24,3 +38,5 @@
 <% end %>
 
 <% end %>
+
+
