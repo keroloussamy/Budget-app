@@ -13,9 +13,9 @@
     <div class="border border-1 d-flex m-2">
       <img src="<%= group.icon %>" width="80px"/>
       <h3 class="m-2"><%= group.name %></h3>
-      <div class="font-bold">
-          $<%= group.entities.inject(0) { |sum, e| sum + (e.amount) }%>
-      </div>
+      <div class="ms-auto pt-5 pe-3 fw-bolder">
+       $<%= group.entities.inject(0) { |sum, e| sum + (e.amount) }%>
+    </div>
     </div>
     <% end %>
   <% end %>
