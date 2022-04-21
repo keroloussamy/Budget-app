@@ -1,10 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<nav class="navbar bg-primary">
+    <div class="d-flex w-100">
+      <%= link_to :back do %>
+        <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
+      <% end %>
+      <div class="w-100 text-center"><h6 class="text-white">Categories</h6>
+    </div>
+    </div>
+  </nav>
 
-<%= render @group %>
+  <div class="border border-1 d-flex m-2">
+    <img src="<%= @group.icon %>" width="80px"/>
+    <h3 class="m-2"><%= @group.name %></h3>
+  </div>
 
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
+<div id="groups">
+  <% @group.entities.each do |entity| %>
+    <%= link_to entity, class: "text-reset text-decoration-none" do %>
+    <div class="border border-1 d-flex mx-4 my-3">
+      <h3 class="m-2"><%= entity.name %></h3>
+      <h3 class="m-2"><%= entity.amount %></h3>
+    </div>
+    <% end %>
+  <% end %>
 </div>
+<p style="color: green"><%= notice %></p>
+<div class="fixed-bottom">
+  <%= link_to "Add New Transaction", new_entity_path, class: "w-100 btn btn-lg btn-success" %>
+</div>
+
