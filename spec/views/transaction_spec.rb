@@ -11,8 +11,8 @@ RSpec.describe 'Transaction page', type: :feature do
     click_button 'Log in'
     click_link 'New Category'
     fill_in 'Name', with: @category.name
-    fill_in 'Icon URL', with: @category.icon
-    click_button 'Next'
+    fill_in 'Icon', with: @category.icon
+    click_button 'Save'
   end
 
   it 'should be able to see transactions' do
@@ -32,7 +32,7 @@ RSpec.describe 'Transaction page', type: :feature do
     fill_in 'Name', with: 'Trans 1'
     fill_in 'Amount', with: 5
     first('#entity_group_ids option', minimum: 1).select_option
-    click_button 'Next'
+    click_button 'Save'
     click_on 'Cat 1'
     expect(page).to have_content('Trans 1')
   end

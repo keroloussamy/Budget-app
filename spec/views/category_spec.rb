@@ -22,8 +22,8 @@ RSpec.describe 'Category page', type: :feature do
   it 'should be able to save category' do
     click_link 'New Category'
     fill_in 'Name', with: 'Cat 1'
-    fill_in 'Icon URL', with: 'url'
-    click_button 'Next'
+    fill_in 'Icon', with: 'url'
+    click_button 'Save'
     expect(page).to have_content('Cat 1')
   end
 end

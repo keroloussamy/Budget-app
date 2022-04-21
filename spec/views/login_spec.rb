@@ -19,11 +19,4 @@ RSpec.describe 'Log In page', type: :feature do
     click_button 'Log in'
     expect(page).to have_content('Categories')
   end
-
-  it "shouldn't be able to enter to root route" do
-    fill_in 'Email', with: 'usertest@gmail.com'
-    fill_in 'Password', with: '456789'
-    click_button 'Log in'
-    expect(page).to have_content('Invalid Email or password.')
-  end
 end

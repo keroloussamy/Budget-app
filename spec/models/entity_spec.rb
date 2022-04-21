@@ -16,7 +16,7 @@ RSpec.describe Entity, type: :model do
   end
 
   it 'icon should be present' do
-    @entity.amount = 0
+    @entity.amount = nil
     expect(@entity).to_not be_valid
   end
 end
