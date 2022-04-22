@@ -1,11 +1,13 @@
 <%= form_with(model: entity) do |form| %>
-<nav class="navbar bg-primary">
-  <div class="d-flex w-100">
-  <%= link_to :back do %>
-    <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
-  <% end %>
-    <div class="w-100 text-center"><h6 class="text-white">New Entity</h6>
-    </div>
+  <nav class="navbar bg-primary">
+  <div class="container-fluid d-flex align-items-baseline">
+    <%= link_to :back do %>
+      <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
+    <% end %>
+    <h6 class="text-white">New Entity</h6>
+    <% if user_signed_in? %>   
+      <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn-primary border border-0'%>
+    <% end %>
   </div>
 </nav>
 
