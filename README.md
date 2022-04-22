@@ -1,61 +1,56 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Recipe App
 
-# Project Name
+> The Budget app is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-> Description the project.
-
+![screenshot](./app_screenshot.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- Ruby on Rails
+- OOP
+- SQL Postgres
+- Bootstrap
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+- [Link](https://shielded-caverns-51008.herokuapp.com/)
 
+## Video Demo
+
+- [Video](https://www.loom.com/share/c27f1fc6e2f049d9939baabbb7abe889)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+- Click on the top right green "code" button.
+- On the dropdown menu, choose "download with zip" button.
+- After download, extract the zip file and you have the project on your machine.
+- Make sure that your PostgreSQL server is running and you have the ability to establish connection with the database.
+- Execute `rails db:create` to create the database.
+- Run `rails s` to run the application.
 
-### Setup
+## Tests
 
-### Install
+- If you want to run some unit tests, all you need to do is:
+- On your terminal execute:
+  > `gem install rspec`
+- Run the `rspec` command in this case over the path of `spec/`, the resulting command will look like this:
+  > `rspec spec/`
+- If you want to run the tests over the entire project, you can execute the following command:
+  > `rspec`
 
-### Usage
+## Author
+👤 **Kerolous Samy**
 
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Kerolous Samy](https://github.com/keroloussamy)
+- Twitter: [Kerolous Samy](https://twitter.com/kerolous_samy)
+- LinkedIn: [Kerolous Samy](https://www.linkedin.com/in/keroloussamy)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
 Feel free to check the [issues page](../../issues/).
 
 ## Show your support
@@ -64,9 +59,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Original [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 ## 📝 License
 

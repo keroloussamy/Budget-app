@@ -1,0 +1,12 @@
+<nav class="navbar bg-primary">
+  <div class="d-flex w-100">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
+  <% end %>
+    <div class="w-100 text-center"><h6 class="text-white">New Category</h6>
+    </div>
+  </div>
+</nav>
+
+
+<%= render "form", group: @group %>

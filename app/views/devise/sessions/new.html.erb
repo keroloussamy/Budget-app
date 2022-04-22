@@ -1,0 +1,28 @@
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <nav class="navbar bg-primary">
+    <div class="container-fluid d-flex align-items-baseline">
+    <%= link_to :back do %>
+      <i class="fas fa-arrow-left text-white fs-5 px-2"></i>
+    <% end %>
+      <h6 class="text-white">LOG IN</h6>
+      <%= f.submit "Log in", class: "btn-primary border border-0" %>
+    </div>
+  </nav>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-100", placeholder: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control w-100", placeholder: "Password" %>
+  </div>
+
+  <div class="text-center">
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-secondary"%>
+    <% end %>
+  </div>
+
+  
+<% end %>
