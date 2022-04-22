@@ -18,7 +18,7 @@
 
 ## Video Demo
 
-- [Video](https://www.loom.com/share/bd918b4f0f964d3b98e65fa4dc2511c5)
+- [Video](https://www.loom.com/share/c27f1fc6e2f049d9939baabbb7abe889)
 
 ## Getting Started
 
