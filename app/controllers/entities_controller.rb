@@ -12,7 +12,7 @@ class EntitiesController < ApplicationController
   # GET /entities/new
   def new
     @entity = Entity.new
-    @groups = Group.where(user_id: current_user.id)
+    @groups = Group.where(author_id: current_user.id)
   end
 
   # GET /entities/1/edit
@@ -22,7 +22,7 @@ class EntitiesController < ApplicationController
   def create
     params = entity_params
     @entity = Entity.new(name: params[:name], amount: params[:amount])
-    @entity.user_id = current_user.id
+    @entity.author_id = current_user.id
     @groups_ids = params[:group_ids]
     @groups_ids.each do |element|
       next if element == ''
